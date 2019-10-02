@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class='row'>
+    {% for deck in decks %}
+    <div class='col-md-4'>
+        <a href='/{{deck.id}}/'>
+        <div class='deck panel panel-default'>
+            <div class='panel-heading'>
+                <h2 class='panel-title'>{{ deck.deckname }}</h2>
+            </div>
+
+            <div class="deck-logo">
+                <img src="{{ deck.image.url }}" height="100">
+            </div>
+        </a>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:"3" %}
+</div>
+    <div class='row'>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class='container container-default container-static-bottom'>
+    <h1>Add your own Deck</h1>
+    <form enctype='multipart/form-data' action='post_url/' method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Submit' />
+    </form>
+</div>
+{% endblock %}
+        

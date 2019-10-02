@@ -1,0 +1,28 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <link rel='stylesheet' type='text/css'
+                href='{% static "style.css" %}'>
+        <link rel='stylesheet' type='text/css'
+                href='{% static "bootstrap.min.css" %}'>
+        <title>TearDecks</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-static-top text-center">
+            <a href='/'>
+                <img src="{% static 'images/logo.png' %}" alt="TearDecks">
+            </a>
+        </nav>
+    <main class='container container--mw700'>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class='footer footer-default footer-static-bottom text-center'>
+        <a href='/'>
+                <img src="{% static 'images/footer.png' %}" alt="TearDecks">
+            </a>
+    </footer>
+    </body>
+</html>
