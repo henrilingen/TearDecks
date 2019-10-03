@@ -15,6 +15,10 @@ class DeckForm(forms.ModelForm):
         widgets = {
             'date_created': forms.SelectDateWidget(),
         }
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='User Name', max_length=64, required=True)
+    password = forms.CharField(widget=forms.PasswordInput())
     
     
     

@@ -2,17 +2,15 @@
 {% load staticfiles %}
 
 {% block content %}
-<div class='row'>
+<h1>{{ username }}</h1><br>
+
+    <div class='row'>
     {% for deck in decks %}
     <div class='col-md-4'>
         <a href='/{{deck.id}}/'>
         <div class='deck panel panel-default'>
             <div class='panel-heading'>
                 <h2 class='panel-title'>{{ deck.deckname }}</h2>
-                <a class='panel-username'
-                   href='/user/{{deck.user.username}}/'>
-                   by: {{ deck.user.username }}
-                </a>
             </div>
 
             <div class="deck-logo">
@@ -34,7 +32,7 @@
 <br>
 <br>
 <div class='container-form'>
-    <h1>Add your own Deck</h1>
+    <h1>Add a new Deck</h1>
     <form enctype='multipart/form-data' action='post_url/' method='post'>
         {% csrf_token %}
         {{ form.as_p }}
@@ -42,4 +40,3 @@
     </form>
 </div>
 {% endblock %}
-        

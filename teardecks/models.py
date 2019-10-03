@@ -17,7 +17,7 @@ class DecksQuerySet(models.QuerySet):
             Q(deckname=user)
         )
 class Deck(models.Model):
-    user = models.ForeignKey("Deck", verbose_name=("User"), on_delete=models.CASCADE)
+    user = models.ForeignKey(User, verbose_name=("User"), on_delete=models.CASCADE)
     deckname = models.CharField(max_length=50, blank=True)
     color = models.CharField(max_length=50, blank = True)
     date_created = models.DateTimeField(auto_now=False, auto_now_add=False)

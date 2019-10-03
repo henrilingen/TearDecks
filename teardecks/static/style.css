@@ -14,3 +14,13 @@ th {
     font-size: 16px;
     /* background-color: rgb(100, 146, 100); */
 }
+
+div.container-form {
+    max-width: 500px;
+    margin: auto;
+    border: 3px solid rgb(228, 218, 174);
+}
+
+a.navbar-text{
+    margin: auto;
+}

@@ -6,9 +6,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
 
 urlpatterns = [
+    url(r'^user/(\w+)/$', views.profile, name='profile'),
     url(r'^$', views.index, name = 'index'),
     url(r'^([0-9]+)/$', views.detail, name = 'detail'),
     url(r'^post_url/$', views.post_deck, name='post_deck'),
+    url(r'^login/$', views.login_view, name='login'),
+    url(r'^logout/$', views.logout_view, name='logout'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
