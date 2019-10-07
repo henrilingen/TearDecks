@@ -24,6 +24,7 @@ class Deck(models.Model):
     price = models.CharField(max_length=1, default='U', choices=DECK_COST_RANGE)
     image = models.ImageField(upload_to="deck_images",
                               default='media/default.png')
+    likes = models.IntegerField(default=0)
 
     objects = DecksQuerySet.as_manager()
 

@@ -51,6 +51,18 @@ def detail(request, decks_id):
     decks = Deck.objects.get(id=decks_id)
     return render(request, 'detail.html', {'decks':decks})
 
+def like_deck(request):
+    deck_id = request.GET.get('deck_id', None)
+
+    like - 0
+    if (deck_id):
+        deck = Deck.objects.get(id=int(deck_id))
+        if deck is not None:
+            likes = deck.likes + 1
+            deck.likes = likes
+            deck.save()
+    return HttpResponse(likes)
+
 def post_deck(request):
     form = DeckForm(request.POST, request.FILES)
     if form.is_valid():

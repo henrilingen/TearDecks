@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^post_url/$', views.post_deck, name='post_deck'),
     url(r'^login/$', views.login_view, name='login'),
     url(r'^logout/$', views.logout_view, name='logout'),
+    url(r'^like_deck/$', views.like_deck, name='like_deck'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

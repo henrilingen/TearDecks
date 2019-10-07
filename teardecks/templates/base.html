@@ -4,9 +4,12 @@
 <html lang='en'>
     <head>
         <link rel='stylesheet' type='text/css'
-                href='{% static "style.css" %}'>
+                href="{% static 'style.css' %}">
         <link rel='stylesheet' type='text/css'
-                href='{% static "bootstrap.min.css" %}'>
+                href="{% static 'bootstrap.min.css' %}">
+        <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'bootstrap.min.css' %}"></script>
         <title>TearDecks</title>
     </head>
     <body>
@@ -31,6 +34,7 @@
     <footer class='footer footer-default footer-static-bottom text-center'>
         <a href='/'>
                 <img src="{% static 'images/footer.png' %}" alt="TearDecks">
+                TearDecks 2019
             </a>
     </footer>
     </body>

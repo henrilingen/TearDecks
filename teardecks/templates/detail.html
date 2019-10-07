@@ -12,10 +12,6 @@
             </div>
             <table class='deck-table'>
                 <tr>
-                    <!-- <th>
-                        <img src='{% static "images/colors.png" %}'>
-                        Deck Colors
-                    </th> -->
                 <tr>
                     <td>{{ decks.color }}</td>
                     Colors: 
@@ -24,6 +20,11 @@
                     <td>{{ decks.date_created }}</td>
                 </tr>
             </table>
+            <button id='likes' data-id='{{deck.id}}'
+                            class='btn btn-mini btn-danger glyphicon glyphicon-heart'
+                            type='button'>
+                        {% if deck.likes > 0 %} {{ deck.likes }} {% endif %}
+            </button>
         </div>
     </div>
 {% endblock %}

@@ -14,14 +14,20 @@
                    by: {{ deck.user.username }}
                 </a>
             </div>
-
-            <div class="deck-logo">
-            <a href='/{{deck.id}}/'>
-                <div class='deck-photo'>
-                    <img src="{{ deck.image.url }}" height="100">
+            <div class='deck panel panel-default'>
+                <div class="deck-logo">
+                <a href='/{{deck.id}}/'>
+                    <div class='deck-photo'>
+                        <img src="{{ deck.image.url }}" height="100">
+                    </div>
                 </div>
+                </a>
+                <button id='likes' data-id='{{deck.id}}'
+                            class='btn btn-mini btn-danger glyphicon glyphicon-heart'
+                            type='button'>
+                        {% if deck.likes > 0 %} {{ deck.likes }} {% endif %}
+                </button>
             </div>
-            </a>
         </div>
     </div>
     {% if forloop.counter|divisibleby:"3" %}
